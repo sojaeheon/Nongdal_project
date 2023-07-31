@@ -1,5 +1,5 @@
 package com.example.myapplication.activity;
-
+//나는 소재헌
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
