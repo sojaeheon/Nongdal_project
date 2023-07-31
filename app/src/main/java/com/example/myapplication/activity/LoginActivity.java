@@ -1,5 +1,5 @@
 package com.example.myapplication.activity;
-//dkd
+//안녕 나는 이선용
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
