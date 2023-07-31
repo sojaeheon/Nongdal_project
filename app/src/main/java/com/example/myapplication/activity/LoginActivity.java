@@ -1,5 +1,6 @@
 package com.example.myapplication.activity;
 //안녕 나는 이선용
+//안녕 나는 소재헌
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
