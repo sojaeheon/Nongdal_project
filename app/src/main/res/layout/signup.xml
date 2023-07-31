@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.LoginActivity">
+
+    <!--뒤로가기 버튼-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signupbackBtn"
+        android:layout_width="94dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="0"
+        android:backgroundTint="#FFC107"
+        android:text="뒤로가기" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_margin="60dp"
+        android:text="회원가입"
+        android:letterSpacing="0.2"
+        android:textStyle="bold"
+        android:textSize="50sp" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!--ID 입력-->
+            <EditText
+                android:id="@+id/createID"
+                android:layout_width="156dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:ems="10"
+                android:inputType="text"
+                android:hint="@string/inputID" />
+
+            <!--중복확인 버튼-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/checkIDdupBtn"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="94dp"
+                android:layout_height="48dp"
+                android:backgroundTint="#FFC107"
+                android:text="중복확인" />
+        </LinearLayout>
+
+        <!--비밀번호 입력-->
+        <EditText
+            android:id="@+id/createPW"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/inputPW"
+            android:inputType="textPassword"/>
+
+        <!--비밀번호 확인-->
+        <EditText
+            android:id="@+id/checkPW"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/checkPW"
+            android:inputType="textPassword"/>
+
+        <!--E-mail 입력-->
+        <EditText
+            android:id="@+id/createEmail"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/inputEmail"
+            android:inputType="textEmailAddress" />
+
+        <!--저장 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signupsaveBtn"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="205dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="45dp"
+            android:backgroundTint="#FFC107"
+            android:text="저장"
+            app:rippleColor="#FFC107" />
+    </LinearLayout>
+</LinearLayout>

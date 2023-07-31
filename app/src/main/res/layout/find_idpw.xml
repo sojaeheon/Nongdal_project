@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="5"
+    android:orientation="vertical"
+    tools:context=".activity.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
+        <!--뒤로가기 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/findbackBtn"
+            android:layout_width="94dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="0"
+            android:backgroundTint="#FFC107"
+            android:text="뒤로가기"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="394dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID/PW 찾기"
+            android:textStyle="bold"
+            android:textSize="50sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1.5">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가입한 이메일을 입력하세요"
+            android:textSize="17sp" />
+        <!--이메일 입력-->
+        <EditText
+            android:id="@+id/findEmail"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/inputEmail"
+            android:inputType="textEmailAddress" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="top|center"
+        android:layout_weight="2">
+        <!--완료 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/findCBtn"
+            android:layout_width="94dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#FFC107"
+            android:text="완료"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="394dp" />
+    </LinearLayout>
+</LinearLayout>

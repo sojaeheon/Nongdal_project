@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="3"
+    android:orientation="vertical"
+    tools:context=".activity.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
+        <!--뒤로가기 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mypagebackBtn"
+            android:layout_width="94dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#FFC107"
+            android:text="뒤로가기" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical">
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <!--비밀번호 변경 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/changePWBtn"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="200dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#FFC107"
+            android:text="비밀번호 변경"
+            android:textSize="20sp"
+            app:rippleColor="#FFC107" />
+        <!--이메일 변경 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/changeEmailBtn"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="200dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#FFC107"
+            android:text="이메일 변경"
+            android:textSize="20sp"
+            app:rippleColor="#FFC107" />
+        <!--로그아웃 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/logoutBtn"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="200dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#FFC107"
+            android:text="로그아웃"
+            android:textSize="20sp"
+            app:rippleColor="#FFC107" />
+    </LinearLayout>
+</LinearLayout>

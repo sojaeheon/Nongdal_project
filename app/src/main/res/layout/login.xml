@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    tools:context=".activity.LoginActivity">
+
+    <!--로고-->
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="농달"
+        android:letterSpacing="0.2"
+        android:textStyle="bold"
+        android:textSize="50sp"/>
+
+
+    <!--로그인 ID,PW 입력 + 여러 버튼 정렬을 위한 레이아웃-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="120dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <!--ID 입력-->
+            <EditText
+                android:id="@+id/loginID"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:hint="@string/inputID"
+                android:inputType="text" />
+
+            <!--PW 입력-->
+            <EditText
+                android:id="@+id/loginPW"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="@string/inputPW"
+                android:inputType="textPassword" />
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <!--회원가입 버튼-->
+                <Button
+                    android:id="@+id/signupBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00ff0000"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="회원가입"
+                    android:textColor="@color/black" />
+
+                <!--ID/PW 찾기 버튼-->
+                <Button
+                    android:id="@+id/findBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00ff0000"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="ID/PW 찾기"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!--로그인 버튼-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loginBtn"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="78dp"
+                android:layout_height="114dp"
+                android:backgroundTint="#FFC107"
+                android:text="로그인" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

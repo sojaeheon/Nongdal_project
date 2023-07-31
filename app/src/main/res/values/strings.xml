@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Agricultural_Data_Management_Application</string>
+    <string name="inputdiary"><font color='#c0c0c0'>일지를 입력하세요</font></string>
+    <string name="inputID"><font color='#c0c0c0'>아이디</font></string>
+    <string name="inputPW"><font color='#c0c0c0'>비밀번호</font></string>
+    <string name="checkPW"><font color='#c0c0c0'>비밀번호 확인</font></string>
+    <string name="inputEmail"><font color='#c0c0c0'>E-mail</font></string>
+    <string name="inputinfo"><font color='#c0c0c0'>-</font></string>
+</resources>
