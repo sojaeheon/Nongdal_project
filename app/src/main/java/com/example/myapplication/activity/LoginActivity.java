@@ -1,5 +1,6 @@
 package com.example.myapplication.activity;
 //나는 소재헌
+//왜 안바뀔까...
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
