@@ -42,7 +42,7 @@ public class CalendarActivity extends AppCompatActivity {
 
     private Button cldbackBtn;
     private Button cldsaveBtn;
-    
+
     private Button clddeleteBtn;
     private ServiceApi service;
 
@@ -106,7 +106,7 @@ public class CalendarActivity extends AppCompatActivity {
                 clddeleteBtn.setVisibility((View.VISIBLE));
             }
         });
-        
+
         //삭제 버튼 클릭
         clddeleteBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
