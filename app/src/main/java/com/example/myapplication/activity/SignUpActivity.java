@@ -61,6 +61,15 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+        //중복확인 버튼 클릭
+        checkIDdupBtn. setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                idCheck();
+
+            }
+        });
+
         // 저장 버튼 클릭
         signupsaveBtn = findViewById(R.id.signupsaveBtn);
         signupsaveBtn.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +111,17 @@ public class SignUpActivity extends AppCompatActivity {
             cancel = true;
         }
 
+        //비밀번호 확인
+        if(cpw.isEmpty()){
+            checkPW.setError("비밀번호를 다시 입력해주세요.");
+            focusView = checkPW;
+            cancel = true;
+        } else if (pw!=cpw) {
+            checkPW.setError("비밀번호가 다릅니다.\n다시 입력해주세요.");
+            focusView = checkPW;
+            cancel = true;
+        }
+
         // 이메일의 유효성 검사
         if (email.isEmpty()) {
             createEmail.setError("이메일을 입력해주세요.");
@@ -138,6 +158,14 @@ public class SignUpActivity extends AppCompatActivity {
                 Log.e("회원가입 에러 발생", t.getMessage());
             }
         });
+    }
+
+    private void idCheck(){
+        String id = createID.getText().toString();
+        String pw = createPW.getText().toString();
+        String email = createEmail.getText().toString();
+
+        startJoin(new JoinData(id, pw, email));
     }
     private boolean isEmailValid(String email) {
         return email.contains("@");

@@ -64,7 +64,9 @@ public class CalendarActivity extends AppCompatActivity {
 
         cldbackBtn = (Button) findViewById(R.id.cldbackBtn);
         cldsaveBtn = (Button) findViewById(R.id.cldsaveBtn);
-        clddeleteBtn =(Button) findViewById(R.id.cldsaveBtn);
+        clddeleteBtn =(Button) findViewById(R.id.clddeleteBtn);
+
+        clddeleteBtn.setVisibility(View.INVISIBLE);
 
         service = RetrofitClient.getClient().create(ServiceApi.class);
 
@@ -95,30 +97,33 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 attemptMemo();
+                clddeleteBtn.setVisibility((View.VISIBLE));
             }
         });
         
         //삭제 버튼 클릭
-        
-//        clddeleteBtn.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v) { attemptDelete();}
-//        });
+        clddeleteBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                attemptDelete();
+                clddeleteBtn.setVisibility(View.INVISIBLE);
+            }
+        });
     }
 
     //삭제버튼 메서드
-//    private void attemptDelete(){
-//        String input1 = inputInfo1.getText().toString();
-//        String input2 = inputInfo2.getText().toString();
-//        String input3 = inputInfo3.getText().toString();
-//        String intputd = inputdiary.getText().toString();
-//
-//        deleteMemo(new MemoData(rYear, rMonth, rDay, input1, input2, input3, intputd) );
-//
-//    }
+    private void attemptDelete(){
+        String input1 = inputInfo1.getText().toString();
+        String input2 = inputInfo2.getText().toString();
+        String input3 = inputInfo3.getText().toString();
+        String intputd = inputdiary.getText().toString();
 
-//    private void deleteMemo(MemoData data){
-//
-//    }
+        deleteMemo(new MemoData(rYear, rMonth, rDay, input1, input2, input3, intputd) );
+
+    }
+
+    private void deleteMemo(MemoData data){
+
+    }
 
     private void attemptMemo() {
         String input1 = inputInfo1.getText().toString();
