@@ -112,6 +112,17 @@ public class SignUpActivity extends AppCompatActivity {
             cancel = true;
         }
 
+        //비밀번호 확인
+        if(cpw.isEmpty()){
+            checkPW.setError("비밀번호를 다시 입력해주세요.");
+            focusView = checkPW;
+            cancel = true;
+        } else if (pw!=cpw) {
+            checkPW.setError("비밀번호가 다릅니다.\n다시 입력해주세요.");
+            focusView = checkPW;
+            cancel = true;
+        }
+
         // 이메일의 유효성 검사
         if (email.isEmpty()) {
             createEmail.setError("이메일을 입력해주세요.");
