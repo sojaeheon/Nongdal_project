@@ -10,6 +10,9 @@ import com.example.myapplication.data.CalendarResponse;
 import com.example.myapplication.data.MemoData;
 import com.example.myapplication.data.MemoResponse;
 
+import com.example.myapplication.data.mypage.ChangeEmailData;
+import com.example.myapplication.data.mypage.ChangeEmailResponse;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
@@ -26,4 +29,7 @@ public interface ServiceApi {
 
     @POST("/user/memo")
     Call<MemoResponse> userMemo(@Body MemoData data);
+
+    @POST("/user/ChangeE")
+    Call<ChangeEmailResponse> userChangeE(@Body ChangeEmailData data);
 }
