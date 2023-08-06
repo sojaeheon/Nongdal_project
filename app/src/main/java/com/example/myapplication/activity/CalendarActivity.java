@@ -41,11 +41,13 @@ public class CalendarActivity extends AppCompatActivity {
 
     private Button cldbackBtn;
     private Button cldsaveBtn;
+    
+    private Button clddeleteBtn;
     private ServiceApi service;
 
     private int rYear;
     private int rMonth;
-    private int rday;
+    private int rDay;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,6 +64,7 @@ public class CalendarActivity extends AppCompatActivity {
 
         cldbackBtn = (Button) findViewById(R.id.cldbackBtn);
         cldsaveBtn = (Button) findViewById(R.id.cldsaveBtn);
+        clddeleteBtn =(Button) findViewById(R.id.cldsaveBtn);
 
         service = RetrofitClient.getClient().create(ServiceApi.class);
 
@@ -81,7 +84,7 @@ public class CalendarActivity extends AppCompatActivity {
                 tv_date.setText(year + "년 " + (month + 1) + "월 " + day + "일 선택");
                 rYear = year;
                 rMonth = month + 1;
-                rday = day;
+                rDay = day;
                 startSt(new CalendarData(year, month +1, day));
             }
         });
@@ -89,13 +92,33 @@ public class CalendarActivity extends AppCompatActivity {
 
         // 저장 버튼 클릭
         cldsaveBtn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 attemptMemo();
             }
         });
+        
+        //삭제 버튼 클릭
+        
+//        clddeleteBtn.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View v) { attemptDelete();}
+//        });
     }
+
+    //삭제버튼 메서드
+//    private void attemptDelete(){
+//        String input1 = inputInfo1.getText().toString();
+//        String input2 = inputInfo2.getText().toString();
+//        String input3 = inputInfo3.getText().toString();
+//        String intputd = inputdiary.getText().toString();
+//
+//        deleteMemo(new MemoData(rYear, rMonth, rDay, input1, input2, input3, intputd) );
+//
+//    }
+
+//    private void deleteMemo(MemoData data){
+//
+//    }
 
     private void attemptMemo() {
         String input1 = inputInfo1.getText().toString();
@@ -103,7 +126,7 @@ public class CalendarActivity extends AppCompatActivity {
         String input3 = inputInfo3.getText().toString();
         String intputd = inputdiary.getText().toString();
 
-        startMemo(new MemoData(rYear, rMonth, rday, input1, input2, input3, intputd ));
+        startMemo(new MemoData(rYear, rMonth, rDay, input1, input2, input3, intputd ));
     }
 
     private void startSt(CalendarData data) {
