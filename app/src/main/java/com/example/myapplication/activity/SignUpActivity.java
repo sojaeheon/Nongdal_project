@@ -64,19 +64,13 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+
         // 저장 버튼 클릭
         signupsaveBtn = findViewById(R.id.signupsaveBtn);
         signupsaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 attemptJoin();
-            }
-        });
-
-        checkIDdupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                attemptcheckID();
             }
         });
     }
@@ -112,6 +106,17 @@ public class SignUpActivity extends AppCompatActivity {
             cancel = true;
         }
 
+        //비밀번호 확인
+        if(cpw.isEmpty()){
+            checkPW.setError("비밀번호를 다시 입력해주세요.");
+            focusView = checkPW;
+            cancel = true;
+        } else if (!pw.equals(cpw)) {
+            checkPW.setError("비밀번호가 다릅니다.\n다시 입력해주세요.");
+            focusView = checkPW;
+            cancel = true;
+        }
+
         // 이메일의 유효성 검사
         if (email.isEmpty()) {
             createEmail.setError("이메일을 입력해주세요.");
@@ -125,7 +130,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         if (cancel) {
             focusView.requestFocus();
-        } else {
+        } else{
             startJoin(new JoinData(id, pw, email));
         }
     }
@@ -150,6 +155,14 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
+    private void idCheck(){
+        String id = createID.getText().toString();
+        String pw = createPW.getText().toString();
+        String email = createEmail.getText().toString();
+
+        startJoin(new JoinData(id, pw, email));
+    }
+
     private void attemptcheckID() {
         String id = createID.getText().toString();
 
@@ -172,7 +185,6 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
-
     private boolean isEmailValid(String email) {
         return email.contains("@");
     }

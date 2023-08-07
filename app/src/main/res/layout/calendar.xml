@@ -257,9 +257,24 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.7"
-        android:orientation="vertical">
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <!--삭제 버튼-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/clddeleteBtn"
+            android:layout_width="94dp"
+            android:layout_height="48dp"
+            android:layout_gravity="left"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="0"
+            android:backgroundTint="#FFC107"
+            android:text="삭제"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="394dp" />
 
         <!--저장 버튼-->
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/cldsaveBtn"
             android:layout_width="94dp"
@@ -271,6 +286,8 @@
             android:text="저장"
             tools:layout_editor_absoluteX="160dp"
             tools:layout_editor_absoluteY="394dp" />
+
+
     </LinearLayout>
 
 </LinearLayout>
