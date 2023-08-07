@@ -7,9 +7,13 @@ public class ChangeEmailData {
     @SerializedName("UserEmail")
     private String UserEmail;
 
-    public ChangeEmailData(String UserEmail) {
+    @SerializedName("UserId")
+    private String UserId;
+
+    public ChangeEmailData(String UserEmail, String UserId) {
 
         this.UserEmail = UserEmail;
+        this.UserId = UserId;
 
     }
 }

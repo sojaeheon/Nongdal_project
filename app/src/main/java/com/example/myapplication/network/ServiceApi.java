@@ -4,6 +4,8 @@ import com.example.myapplication.data.JoinData;
 import com.example.myapplication.data.JoinResponse;
 import com.example.myapplication.data.LoginData;
 import com.example.myapplication.data.LoginResponse;
+import com.example.myapplication.data.CheckIdData;
+import com.example.myapplication.data.CheckIdResponse;
 
 import com.example.myapplication.data.CalendarData;
 import com.example.myapplication.data.CalendarResponse;
@@ -12,6 +14,8 @@ import com.example.myapplication.data.MemoResponse;
 
 import com.example.myapplication.data.mypage.ChangeEmailData;
 import com.example.myapplication.data.mypage.ChangeEmailResponse;
+import com.example.myapplication.data.mypage.ChangePwData;
+import com.example.myapplication.data.mypage.ChangePwResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -32,4 +36,10 @@ public interface ServiceApi {
 
     @POST("/user/ChangeE")
     Call<ChangeEmailResponse> userChangeE(@Body ChangeEmailData data);
+
+    @POST("/user/ChangeP")
+    Call<ChangePwResponse> userChangeP(@Body ChangePwData data);
+
+    @POST("/user/CheckId")
+    Call<CheckIdResponse> userCheckId(@Body CheckIdData data);
 }

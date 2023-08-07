@@ -4,6 +4,7 @@ package com.example.myapplication.activity;
 //안녕 나는 박재형
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,10 +36,13 @@ public class LoginActivity extends AppCompatActivity {
     private Button signupBtn;
     private Button findBtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
 
         loginBtn = (Button)findViewById(R.id.loginBtn);
         signupBtn = (Button)findViewById(R.id.signupBtn);
@@ -54,9 +58,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 attemptLogin();
-            //    Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
-            //    startActivity(intent);
-            //    finish();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("user_id",loginID.getText().toString()); // 로그인한 사용자의 아이디를 저장
+                editor.apply();
             }
         });
 
@@ -126,6 +130,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
                     startActivity(intent);
                     finish();
+
                 }
             }
 

@@ -1,8 +1,8 @@
-package com.example.myapplication.data.mypage;
+package com.example.myapplication.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ChangePwResponse {
+public class CheckIdResponse {
     @SerializedName("code")
     private int code;
 

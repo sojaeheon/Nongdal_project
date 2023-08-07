@@ -1,5 +1,6 @@
 package com.example.myapplication.activity;
 
+import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -55,14 +56,17 @@ public class ChangeEmail_Activity extends AppCompatActivity {
         mailCBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                attemptChangeE();
             }
         });
     }
 
-    private void attemptJoin() {
+    private void attemptChangeE() {
+        SharedPreferences sharedPreferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
         ChangeEmail.setError(null);
 
         String email = ChangeEmail.getText().toString();
+        String id = sharedPreferences.getString("user_id", "");
 
         boolean cancel = false;
         View focusView = null;
@@ -82,7 +86,7 @@ public class ChangeEmail_Activity extends AppCompatActivity {
         if (cancel) {
             focusView.requestFocus();
         } else {
-            startChangeE(new ChangeEmailData(email));
+            startChangeE(new ChangeEmailData(email, id));
         }
     }
 
@@ -100,8 +104,8 @@ public class ChangeEmail_Activity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ChangeEmailResponse> call, Throwable t) {
-                Toast.makeText(ChangeEmail_Activity.this, "회원가입 에러 발생", Toast.LENGTH_SHORT).show();
-                Log.e("회원가입 에러 발생", t.getMessage());
+                Toast.makeText(ChangeEmail_Activity.this, "이메일 변경 에러 발생", Toast.LENGTH_SHORT).show();
+                Log.e("이메일 변경 에러 발생", t.getMessage());
             }
         });
     }

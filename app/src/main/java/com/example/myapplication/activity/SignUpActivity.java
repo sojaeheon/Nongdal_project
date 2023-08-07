@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 
 import com.example.myapplication.R;
 
+import com.example.myapplication.data.CheckIdData;
+import com.example.myapplication.data.CheckIdResponse;
 import com.example.myapplication.network.RetrofitClient;
 import com.example.myapplication.network.ServiceApi;
 import com.example.myapplication.data.JoinData;
@@ -67,6 +69,13 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 attemptJoin();
+            }
+        });
+
+        checkIDdupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                attemptcheckID();
             }
         });
     }
@@ -139,6 +148,30 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void attemptcheckID() {
+        String id = createID.getText().toString();
+
+        startCheckID(new CheckIdData(id));
+    }
+
+    private void startCheckID(CheckIdData data) {
+        service.userCheckId(data).enqueue(new Callback<CheckIdResponse>() {
+            @Override
+            public void onResponse(Call<CheckIdResponse> call, Response<CheckIdResponse> response) {
+                CheckIdResponse result = response.body();
+                Toast.makeText(SignUpActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<CheckIdResponse> call, Throwable t) {
+                Toast.makeText(SignUpActivity.this, "아이디 중복체크 에러 발생", Toast.LENGTH_SHORT).show();
+                Log.e("아이디 중복체크 에러 발생", t.getMessage());
+            }
+        });
+    }
+
     private boolean isEmailValid(String email) {
         return email.contains("@");
     }
