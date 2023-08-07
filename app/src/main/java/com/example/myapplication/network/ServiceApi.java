@@ -10,6 +10,7 @@ import com.example.myapplication.data.CheckIdResponse;
 import com.example.myapplication.data.CalendarData;
 import com.example.myapplication.data.CalendarResponse;
 import com.example.myapplication.data.MemoData;
+import com.example.myapplication.data.DeleteData;
 import com.example.myapplication.data.MemoResponse;
 
 import com.example.myapplication.data.mypage.ChangeEmailData;
@@ -42,4 +43,6 @@ public interface ServiceApi {
 
     @POST("/user/CheckId")
     Call<CheckIdResponse> userCheckId(@Body CheckIdData data);
+    @POST("/user/delete")
+    Call<CalendarResponse> userDelete(@Body DeleteData data);
 }
