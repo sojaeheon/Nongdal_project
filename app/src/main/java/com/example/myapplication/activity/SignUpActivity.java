@@ -24,6 +24,7 @@ import com.example.myapplication.data.JoinResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+// 0807 수정
 public class SignUpActivity extends AppCompatActivity {
     // 회원가입 ID, PW, 확인 PW, E-mail 텍스트
     private EditText createID;
