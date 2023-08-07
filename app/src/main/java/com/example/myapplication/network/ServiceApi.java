@@ -43,6 +43,7 @@ public interface ServiceApi {
 
     @POST("/user/CheckId")
     Call<CheckIdResponse> userCheckId(@Body CheckIdData data);
+
     @POST("/user/delete")
     Call<CalendarResponse> userDelete(@Body DeleteData data);
 }

@@ -73,13 +73,6 @@ public class SignUpActivity extends AppCompatActivity {
                 attemptJoin();
             }
         });
-
-        checkIDdupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                attemptcheckID();
-            }
-        });
     }
 
     private void attemptJoin() {
@@ -160,6 +153,14 @@ public class SignUpActivity extends AppCompatActivity {
                 Log.e("회원가입 에러 발생", t.getMessage());
             }
         });
+    }
+
+    private void idCheck(){
+        String id = createID.getText().toString();
+        String pw = createPW.getText().toString();
+        String email = createEmail.getText().toString();
+
+        startJoin(new JoinData(id, pw, email));
     }
 
     private void attemptcheckID() {
