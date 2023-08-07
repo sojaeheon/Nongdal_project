@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 
 import com.example.myapplication.R;
 
+import com.example.myapplication.data.CheckIdData;
+import com.example.myapplication.data.CheckIdResponse;
 import com.example.myapplication.network.RetrofitClient;
 import com.example.myapplication.network.ServiceApi;
 import com.example.myapplication.data.JoinData;
