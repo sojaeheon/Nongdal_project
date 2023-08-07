@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
 
+import com.example.myapplication.data.DeleteData;
 import com.example.myapplication.network.RetrofitClient;
 import com.example.myapplication.network.ServiceApi;
 
@@ -66,7 +67,12 @@ public class CalendarActivity extends AppCompatActivity {
         cldsaveBtn = (Button) findViewById(R.id.cldsaveBtn);
         clddeleteBtn =(Button) findViewById(R.id.clddeleteBtn);
 
-        clddeleteBtn.setVisibility(View.INVISIBLE);
+        if(inputInfo1.getText().toString().isEmpty() && inputInfo2.getText().toString().isEmpty() && inputInfo3.getText().toString().isEmpty() && inputdiary.getText().toString().isEmpty()){
+            clddeleteBtn.setVisibility(View.INVISIBLE);
+        }else{
+            clddeleteBtn.setVisibility(View.VISIBLE);
+        }
+
 
         service = RetrofitClient.getClient().create(ServiceApi.class);
 
@@ -105,7 +111,12 @@ public class CalendarActivity extends AppCompatActivity {
         clddeleteBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 attemptDelete();
-                clddeleteBtn.setVisibility(View.INVISIBLE);
+                if(inputInfo1.getText().toString().isEmpty() && inputInfo2.getText().toString().isEmpty() && inputInfo3.getText().toString().isEmpty() && inputdiary.getText().toString().isEmpty() ){
+                    clddeleteBtn.setVisibility(View.INVISIBLE);
+                }else{
+                    clddeleteBtn.setVisibility(View.VISIBLE);
+                }
+
             }
         });
     }
@@ -117,11 +128,32 @@ public class CalendarActivity extends AppCompatActivity {
         String input3 = inputInfo3.getText().toString();
         String intputd = inputdiary.getText().toString();
 
-        deleteMemo(new MemoData(rYear, rMonth, rDay, input1, input2, input3, intputd) );
+        deleteMemo(new DeleteData(rYear, rMonth, rDay, input1, input2, input3, intputd) );
 
     }
 
-    private void deleteMemo(MemoData data){
+    private void deleteMemo(DeleteData data){
+        service.userDelete(data).enqueue(new Callback<CalendarResponse>() {
+            @Override
+            public void onResponse(Call<CalendarResponse> call, Response<CalendarResponse> response) {
+                CalendarResponse result = response.body();
+
+                inputdiary.setText(null);
+                inputInfo1.setText(null);
+                inputInfo2.setText(null);
+                inputInfo3.setText(null);
+
+                Toast.makeText(CalendarActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<CalendarResponse> call, Throwable t) {
+                Toast.makeText(CalendarActivity.this, "삭제 에러 발생", Toast.LENGTH_SHORT).show();
+                Log.e("삭제 에러 발생", t.getMessage());
+
+            }
+        });
 
     }
 

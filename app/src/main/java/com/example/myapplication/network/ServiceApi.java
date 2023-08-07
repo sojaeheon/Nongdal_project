@@ -8,6 +8,7 @@ import com.example.myapplication.data.LoginResponse;
 import com.example.myapplication.data.CalendarData;
 import com.example.myapplication.data.CalendarResponse;
 import com.example.myapplication.data.MemoData;
+import com.example.myapplication.data.DeleteData;
 import com.example.myapplication.data.MemoResponse;
 
 import retrofit2.Call;
@@ -26,4 +27,6 @@ public interface ServiceApi {
 
     @POST("/user/memo")
     Call<MemoResponse> userMemo(@Body MemoData data);
+    @POST("/user/delete")
+    Call<CalendarResponse> userDelete(@Body DeleteData data);
 }
