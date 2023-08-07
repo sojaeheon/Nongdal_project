@@ -61,7 +61,6 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-
         // 저장 버튼 클릭
         signupsaveBtn = findViewById(R.id.signupsaveBtn);
         signupsaveBtn.setOnClickListener(new View.OnClickListener() {
@@ -103,17 +102,6 @@ public class SignUpActivity extends AppCompatActivity {
             cancel = true;
         }
 
-        //비밀번호 확인
-        if(cpw.isEmpty()){
-            checkPW.setError("비밀번호를 다시 입력해주세요.");
-            focusView = checkPW;
-            cancel = true;
-        } else if (!pw.equals(cpw)) {
-            checkPW.setError("비밀번호가 다릅니다.\n다시 입력해주세요.");
-            focusView = checkPW;
-            cancel = true;
-        }
-
         // 이메일의 유효성 검사
         if (email.isEmpty()) {
             createEmail.setError("이메일을 입력해주세요.");
@@ -127,7 +115,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         if (cancel) {
             focusView.requestFocus();
-        } else{
+        } else {
             startJoin(new JoinData(id, pw, email));
         }
     }
@@ -159,6 +147,30 @@ public class SignUpActivity extends AppCompatActivity {
 
         startJoin(new JoinData(id, pw, email));
     }
+
+    private void attemptcheckID() {
+        String id = createID.getText().toString();
+
+        startCheckID(new CheckIdData(id));
+    }
+
+    private void startCheckID(CheckIdData data) {
+        service.userCheckId(data).enqueue(new Callback<CheckIdResponse>() {
+            @Override
+            public void onResponse(Call<CheckIdResponse> call, Response<CheckIdResponse> response) {
+                CheckIdResponse result = response.body();
+                Toast.makeText(SignUpActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<CheckIdResponse> call, Throwable t) {
+                Toast.makeText(SignUpActivity.this, "아이디 중복체크 에러 발생", Toast.LENGTH_SHORT).show();
+                Log.e("아이디 중복체크 에러 발생", t.getMessage());
+            }
+        });
+    }
+
     private boolean isEmailValid(String email) {
         return email.contains("@");
     }

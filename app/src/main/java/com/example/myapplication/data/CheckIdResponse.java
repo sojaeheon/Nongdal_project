@@ -1,9 +1,8 @@
-package com.example.myapplication.data.mypage;
+package com.example.myapplication.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ChangeEmailResponse {
-
+public class CheckIdResponse {
     @SerializedName("code")
     private int code;
 
@@ -17,5 +16,4 @@ public class ChangeEmailResponse {
     public String getMessage() {
         return message;
     }
-
 }
