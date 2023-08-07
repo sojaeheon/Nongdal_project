@@ -21,6 +21,8 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 
+// 0807 수정
+
 public interface ServiceApi {
     @POST("/user/login")
     Call<LoginResponse> userLogin(@Body LoginData data);

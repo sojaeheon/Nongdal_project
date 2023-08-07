@@ -1,5 +1,5 @@
 package com.example.myapplication.data;
-
+// 0807 수정
 import com.google.gson.annotations.SerializedName;
 
 public class CheckIdData {

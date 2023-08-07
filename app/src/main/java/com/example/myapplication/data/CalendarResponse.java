@@ -3,7 +3,7 @@ package com.example.myapplication.data;
 import com.google.gson.annotations.SerializedName;
 
 public class CalendarResponse {
-
+    // 0807 수정
     @SerializedName("code")
     private int code;
 

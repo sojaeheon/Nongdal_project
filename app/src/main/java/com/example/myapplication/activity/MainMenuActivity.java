@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
-
+// 0807 수정
 public class MainMenuActivity extends AppCompatActivity {
 
     Button mypageBtn, cldBtn, predBtn, infoBtn;

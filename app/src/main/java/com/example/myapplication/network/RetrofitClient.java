@@ -3,6 +3,7 @@ package com.example.myapplication.network;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+// 0807 수정
 public class RetrofitClient {
     private final static String BASE_URL = "http://203.234.62.225:3000";
     private static Retrofit retrofit = null;

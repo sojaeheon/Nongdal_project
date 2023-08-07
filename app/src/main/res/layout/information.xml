@@ -8,6 +8,8 @@
     android:weightSum="10"
     tools:context=".activity.LoginActivity">
 
+    <!-- 0807 수정 -->
+
     <!--뒤로가기-->
     <LinearLayout
         android:layout_width="match_parent"

@@ -28,6 +28,7 @@ import com.example.myapplication.data.MemoResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+// 0807 수정
 public class CalendarActivity extends AppCompatActivity {
 
     // 성장 정보 값 (1:초장, 2:관부직경, 3:엽장)
