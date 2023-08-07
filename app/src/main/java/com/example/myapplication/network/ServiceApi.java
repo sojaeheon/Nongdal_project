@@ -35,13 +35,13 @@ public interface ServiceApi {
     @POST("/user/memo")
     Call<MemoResponse> userMemo(@Body MemoData data);
 
-    @POST("/user/ChangeE")
+    @POST("/user/changeE")
     Call<ChangeEmailResponse> userChangeE(@Body ChangeEmailData data);
 
-    @POST("/user/ChangeP")
+    @POST("/user/changeP")
     Call<ChangePwResponse> userChangeP(@Body ChangePwData data);
 
-    @POST("/user/CheckId")
+    @POST("/user/checkId")
     Call<CheckIdResponse> userCheckId(@Body CheckIdData data);
 
     @POST("/user/delete")
