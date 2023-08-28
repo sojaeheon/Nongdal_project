@@ -50,119 +50,129 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3.3">
-
-        <TableLayout
+        <ListView
+            android:id="@+id/Fertilizer_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="20dp"
-            android:background="#808080"
-            android:stretchColumns="*">
+            android:layout_weight="1"
+            android:choiceMode="singleChoice"
+            android:dividerHeight="1.5dp"></ListView>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                android:background="#E1E1E1">
 
-                <TextView
-                    android:id="@+id/nameA"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:text="A비료"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/nameB"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:text="B비료"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/nameC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:text="C비료"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </TableRow>
+<!--        <TableLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginLeft="15dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginEnd="15dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:background="#808080"-->
+<!--            android:stretchColumns="*">-->
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                android:background="#FFFFFF">
+<!--            <TableRow-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_margin="1dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="#E1E1E1">-->
 
-                <TextView
-                    android:id="@+id/infoA_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:text=""
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:id="@+id/nameA"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|center_horizontal"-->
+<!--                    android:text="A비료"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/infoB_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:text=""
-                    android:textSize="16sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/nameB"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|center_horizontal"-->
+<!--                    android:text="B비료"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/infoC_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:text=""
-                    android:textSize="16sp" />
-            </TableRow>
+<!--                <TextView-->
+<!--                    android:id="@+id/nameC"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|center_horizontal"-->
+<!--                    android:text="C비료"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textStyle="bold" />-->
+<!--            </TableRow>-->
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                android:background="#FFFFFF">
+<!--            <TableRow-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_margin="1dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="#FFFFFF">-->
 
-                <TextView
-                    android:id="@+id/infoA_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:text=""
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:id="@+id/infoA_1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|center_horizontal"-->
+<!--                    android:text=""-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/infoB_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:text=""
-                    android:textSize="16sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/infoB_1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|center_horizontal"-->
+<!--                    android:text=""-->
+<!--                    android:textSize="16sp" />-->
 
-                <TextView
-                    android:id="@+id/infoC_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|center_horizontal"
-                    android:text=""
-                    android:textSize="16sp" />
-            </TableRow>
-        </TableLayout>
+<!--                <TextView-->
+<!--                    android:id="@+id/infoC_1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|center_horizontal"-->
+<!--                    android:text=""-->
+<!--                    android:textSize="16sp" />-->
+<!--            </TableRow>-->
+
+<!--            <TableRow-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_margin="1dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="#FFFFFF">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/infoA_2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|center_horizontal"-->
+<!--                    android:text=""-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/infoB_2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|center_horizontal"-->
+<!--                    android:text=""-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/infoC_2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical|center_horizontal"-->
+<!--                    android:text=""-->
+<!--                    android:textSize="16sp" />-->
+<!--            </TableRow>-->
+<!--        </TableLayout>-->
     </LinearLayout>
 
     <!--날씨 정보-->

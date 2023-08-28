@@ -36,6 +36,7 @@
         <activity android:name=".activity.PredictionActivity"/>
         <activity android:name=".activity.SignUpActivity" />
         <activity android:name=".activity.CalendarActivity" />
+
     </application>
 
 </manifest>

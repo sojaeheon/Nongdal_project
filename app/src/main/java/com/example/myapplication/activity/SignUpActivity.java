@@ -73,6 +73,14 @@ public class SignUpActivity extends AppCompatActivity {
                 attemptJoin();
             }
         });
+
+        //중복확인버튼
+        checkIDdupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                attemptcheckID();
+            }
+        });
     }
 
     private void attemptJoin() {
@@ -155,13 +163,6 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    private void idCheck(){
-        String id = createID.getText().toString();
-        String pw = createPW.getText().toString();
-        String email = createEmail.getText().toString();
-
-        startJoin(new JoinData(id, pw, email));
-    }
 
     private void attemptcheckID() {
         String id = createID.getText().toString();
