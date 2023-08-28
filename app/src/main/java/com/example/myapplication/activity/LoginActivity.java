@@ -17,8 +17,8 @@ import com.example.myapplication.R;
 
 import com.example.myapplication.network.RetrofitClient;
 import com.example.myapplication.network.ServiceApi;
-import com.example.myapplication.data.LoginData;
-import com.example.myapplication.data.LoginResponse;
+import com.example.myapplication.data.startpage.LoginData;
+import com.example.myapplication.data.startpage.LoginResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -1,4 +1,4 @@
-package com.example.myapplication.data;
+package com.example.myapplication.data.startpage;
 
 import com.google.gson.annotations.SerializedName;
 // 0807 수정

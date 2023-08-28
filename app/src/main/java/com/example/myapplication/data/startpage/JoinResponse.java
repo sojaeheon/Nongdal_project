@@ -1,8 +1,8 @@
-package com.example.myapplication.data;
-// 0807 수정
-import com.google.gson.annotations.SerializedName;
+package com.example.myapplication.data.startpage;
 
-public class CheckIdResponse {
+import com.google.gson.annotations.SerializedName;
+// 0807 수정
+public class JoinResponse {
     @SerializedName("code")
     private int code;
 
@@ -16,4 +16,5 @@ public class CheckIdResponse {
     public String getMessage() {
         return message;
     }
+
 }
