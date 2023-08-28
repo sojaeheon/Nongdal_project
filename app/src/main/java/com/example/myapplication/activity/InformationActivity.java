@@ -35,7 +35,7 @@ public class InformationActivity extends AppCompatActivity {
     TextView text;
     EditText cityEditText;
     Button fetchWeatherButton;
-    String data;
+    String datas;
 
 
     @Override
@@ -67,12 +67,12 @@ public class InformationActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        data = getWeatherXmlData(cityCoordinates);
+                        datas = getWeatherXmlData(cityCoordinates);
 
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                text.setText(data);
+                                text.setText(datas);
                             }
                         });
                     }
