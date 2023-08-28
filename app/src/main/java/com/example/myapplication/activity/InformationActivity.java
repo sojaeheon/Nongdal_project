@@ -35,6 +35,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
+// 0807 수정
 public class InformationActivity extends AppCompatActivity {
     Button infobackBtn;
 

@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context=".activity.LoginActivity">
 
+    <!-- 0807 수정 -->
+
     <!--뒤로가기 버튼-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signupbackBtn"

@@ -22,7 +22,7 @@ import com.example.myapplication.network.ServiceApi;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+// 0807 수정
 public class ChangePW_Activity extends AppCompatActivity {
 
     // 변경할 PW 텍스트

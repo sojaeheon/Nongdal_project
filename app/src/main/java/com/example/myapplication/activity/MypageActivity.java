@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
-
+// 0807 수정
 public class MypageActivity extends AppCompatActivity {
 
     Button mypagebackBtn, changePWBtn, changeEmailBtn, logoutBtn;
