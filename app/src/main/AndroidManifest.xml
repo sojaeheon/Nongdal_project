@@ -20,7 +20,7 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.MainMenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -31,7 +31,7 @@
         <activity android:name=".activity.ChangePW_Activity"/>
         <activity android:name=".activity.Find_IDPW_Activity"/>
         <activity android:name=".activity.InformationActivity"/>
-        <activity android:name=".activity.MainMenuActivity"/>
+        <activity android:name=".activity.LoginActivity"/>
         <activity android:name=".activity.MypageActivity"/>
         <activity android:name=".activity.PredictionActivity"/>
         <activity android:name=".activity.SignUpActivity" />
