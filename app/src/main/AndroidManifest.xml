@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 0807 수정 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
@@ -37,6 +36,7 @@
         <activity android:name=".activity.PredictionActivity"/>
         <activity android:name=".activity.SignUpActivity" />
         <activity android:name=".activity.CalendarActivity" />
+        <activity android:name=".activity.Chat_bot_Activity"/>
 
     </application>
 

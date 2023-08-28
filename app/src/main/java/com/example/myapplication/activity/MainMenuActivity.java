@@ -12,7 +12,7 @@ import com.example.myapplication.R;
 // 0807 수정
 public class MainMenuActivity extends AppCompatActivity {
 
-    Button mypageBtn, cldBtn, predBtn, infoBtn;
+    Button mypageBtn, cldBtn, predBtn, infoBtn, chatbotBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class MainMenuActivity extends AppCompatActivity {
         cldBtn = (Button) findViewById(R.id.cldBtn);
         predBtn = (Button) findViewById(R.id.predBtn);
         infoBtn = (Button) findViewById(R.id.infoBtn);
+        chatbotBtn = (Button) findViewById(R.id.chatbotBtn);
 
         // 마이페이지 버튼 클릭 -> 마이페이지 화면으로 전환
         mypageBtn.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +57,15 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), InformationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 챗봇 버튼
+        chatbotBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Chat_bot_Activity.class);
                 startActivity(intent);
             }
         });
