@@ -1,12 +1,12 @@
-package com.example.myapplication.data;
-// 0807 수정
+package com.example.myapplication.data.startpage;
+
 import com.google.gson.annotations.SerializedName;
 
-public class CheckIdData {
+public class FindPwData {
     @SerializedName("UserId")
     private String UserId;
 
-    public CheckIdData(String UserId) {
+    public FindPwData(String UserId) {
         this.UserId = UserId;
     }
 }
