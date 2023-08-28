@@ -14,12 +14,12 @@ import androidx.annotation.Nullable;
 
 import com.example.myapplication.R;
 
-import com.example.myapplication.data.CheckIdData;
-import com.example.myapplication.data.CheckIdResponse;
+import com.example.myapplication.data.startpage.CheckIdData;
+import com.example.myapplication.data.startpage.CheckIdResponse;
 import com.example.myapplication.network.RetrofitClient;
 import com.example.myapplication.network.ServiceApi;
-import com.example.myapplication.data.JoinData;
-import com.example.myapplication.data.JoinResponse;
+import com.example.myapplication.data.startpage.JoinData;
+import com.example.myapplication.data.startpage.JoinResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -64,13 +64,19 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-
         // 저장 버튼 클릭
         signupsaveBtn = findViewById(R.id.signupsaveBtn);
         signupsaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 attemptJoin();
+            }
+        });
+
+        checkIDdupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                attemptcheckID();
             }
         });
     }
@@ -130,7 +136,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         if (cancel) {
             focusView.requestFocus();
-        } else{
+        } else {
             startJoin(new JoinData(id, pw, email));
         }
     }
@@ -143,8 +149,8 @@ public class SignUpActivity extends AppCompatActivity {
                 Toast.makeText(SignUpActivity.this, result.getMessage(), Toast.LENGTH_SHORT).show();
 
                 if (result.getCode() == 200) {
-                      finish();
-                 }
+                    finish();
+                }
             }
 
             @Override
@@ -153,14 +159,6 @@ public class SignUpActivity extends AppCompatActivity {
                 Log.e("회원가입 에러 발생", t.getMessage());
             }
         });
-    }
-
-    private void idCheck(){
-        String id = createID.getText().toString();
-        String pw = createPW.getText().toString();
-        String email = createEmail.getText().toString();
-
-        startJoin(new JoinData(id, pw, email));
     }
 
     private void attemptcheckID() {
@@ -185,6 +183,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+
     private boolean isEmailValid(String email) {
         return email.contains("@");
     }

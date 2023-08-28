@@ -1,11 +1,15 @@
 package com.example.myapplication.network;
 
-import com.example.myapplication.data.JoinData;
-import com.example.myapplication.data.JoinResponse;
-import com.example.myapplication.data.LoginData;
-import com.example.myapplication.data.LoginResponse;
-import com.example.myapplication.data.CheckIdData;
-import com.example.myapplication.data.CheckIdResponse;
+import com.example.myapplication.data.startpage.JoinData;
+import com.example.myapplication.data.startpage.JoinResponse;
+import com.example.myapplication.data.startpage.LoginData;
+import com.example.myapplication.data.startpage.LoginResponse;
+import com.example.myapplication.data.startpage.CheckIdData;
+import com.example.myapplication.data.startpage.CheckIdResponse;
+import com.example.myapplication.data.startpage.FindIdData;
+import com.example.myapplication.data.startpage.FindIdResponse;
+import com.example.myapplication.data.startpage.FindPwData;
+import com.example.myapplication.data.startpage.FindPwResponse;
 
 import com.example.myapplication.data.CalendarData;
 import com.example.myapplication.data.CalendarResponse;
@@ -17,6 +21,7 @@ import com.example.myapplication.data.mypage.ChangeEmailData;
 import com.example.myapplication.data.mypage.ChangeEmailResponse;
 import com.example.myapplication.data.mypage.ChangePwData;
 import com.example.myapplication.data.mypage.ChangePwResponse;
+
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -48,4 +53,10 @@ public interface ServiceApi {
 
     @POST("/user/delete")
     Call<CalendarResponse> userDelete(@Body DeleteData data);
+
+    @POST("/user/FindI")
+    Call<FindIdResponse> userFindI(@Body FindIdData data);
+
+    @POST("/user/FindP")
+    Call<FindPwResponse> userFindP(@Body FindPwData data);
 }
