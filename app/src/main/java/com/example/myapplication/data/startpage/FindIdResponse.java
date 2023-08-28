@@ -1,14 +1,15 @@
-package com.example.myapplication.data.mypage;
+package com.example.myapplication.data.startpage;
 
 import com.google.gson.annotations.SerializedName;
-// 0807 수정
-public class ChangeEmailResponse {
 
+public class FindIdResponse {
     @SerializedName("code")
     private int code;
-
     @SerializedName("message")
     private String message;
+
+    @SerializedName("rUserId")
+    private String rUserId;
 
     public int getCode() {
         return code;
@@ -18,4 +19,5 @@ public class ChangeEmailResponse {
         return message;
     }
 
+    public String getrUserId() { return rUserId; }
 }

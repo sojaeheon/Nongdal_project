@@ -8,6 +8,8 @@
     android:gravity="center|top"
     tools:context=".activity.LoginActivity">
 
+    <!-- 0807 수정 -->
+
     <!--로고-->
     <TextView
         android:id="@+id/textView5"
