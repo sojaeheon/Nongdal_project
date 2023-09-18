@@ -46,7 +46,7 @@ public class Chat_bot_Activity extends AppCompatActivity {
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     OkHttpClient client = new OkHttpClient();
 
-    private static final String MY_SECRET_KEY = "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";
+    private static final String MY_SECRET_KEY = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
