@@ -3,6 +3,7 @@ package com.example.myapplication.data;
 import com.google.gson.annotations.SerializedName;
 
 public class DeleteData {
+
     @SerializedName("sYear")
     private int sYear;
 
@@ -11,6 +12,8 @@ public class DeleteData {
 
     @SerializedName("sDate")
     private int sDate;
+    @SerializedName("UserId")
+    private String UserId;
 
     @SerializedName("sText")
     private String sText;
@@ -26,10 +29,11 @@ public class DeleteData {
 
 
 
-    public DeleteData(int sYear, int sMonth, int sDate, String sinput1, String sinput2, String sinput3, String sText) {
+    public DeleteData(int sYear, int sMonth, int sDate,String UserId, String sinput1, String sinput2, String sinput3, String sText) {
         this.sYear = sYear;
         this.sMonth = sMonth;
         this.sDate = sDate;
+        this.UserId = UserId;
         this.sinput1 = sinput1;
         this.sinput2 = sinput2;
         this.sinput3 = sinput3;
