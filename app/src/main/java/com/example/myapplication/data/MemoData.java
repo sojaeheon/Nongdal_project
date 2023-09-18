@@ -12,6 +12,9 @@ public class MemoData {
     @SerializedName("sDate")
     private int sDate;
 
+    @SerializedName("UserId")
+    private String UserId;
+
     @SerializedName("sText")
     private String sText;
 
@@ -26,10 +29,11 @@ public class MemoData {
 
 
 
-    public MemoData(int sYear, int sMonth, int sDate, String sinput1, String sinput2, String sinput3, String sText) {
+    public MemoData(int sYear, int sMonth, int sDate, String UserId, String sinput1, String sinput2, String sinput3, String sText) {
         this.sYear = sYear;
         this.sMonth = sMonth;
         this.sDate = sDate;
+        this.UserId = UserId;
         this.sinput1 = sinput1;
         this.sinput2 = sinput2;
         this.sinput3 = sinput3;

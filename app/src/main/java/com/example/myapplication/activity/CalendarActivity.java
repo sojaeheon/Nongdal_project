@@ -1,6 +1,7 @@
 package com.example.myapplication.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -68,11 +69,11 @@ public class CalendarActivity extends AppCompatActivity {
         cldsaveBtn = (Button) findViewById(R.id.cldsaveBtn);
         clddeleteBtn =(Button) findViewById(R.id.clddeleteBtn);
 
-        if(inputInfo1.getText().toString().isEmpty() && inputInfo2.getText().toString().isEmpty() && inputInfo3.getText().toString().isEmpty() && inputdiary.getText().toString().isEmpty()){
-            clddeleteBtn.setVisibility(View.INVISIBLE);
-        }else{
-            clddeleteBtn.setVisibility(View.VISIBLE);
-        }
+//        if(inputInfo1.getText().toString().isEmpty() && inputInfo2.getText().toString().isEmpty() && inputInfo3.getText().toString().isEmpty() && inputdiary.getText().toString().isEmpty()){
+//            clddeleteBtn.setVisibility(View.INVISIBLE);
+//        }else{
+//            clddeleteBtn.setVisibility(View.VISIBLE);
+//        }
 
 
         service = RetrofitClient.getClient().create(ServiceApi.class);
@@ -90,11 +91,20 @@ public class CalendarActivity extends AppCompatActivity {
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
+                SharedPreferences sharedPreferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
+                String id = sharedPreferences.getString("user_id", "");
+
                 tv_date.setText(year + "년 " + (month + 1) + "월 " + day + "일 선택");
                 rYear = year;
                 rMonth = month + 1;
                 rDay = day;
-                startSt(new CalendarData(year, month +1, day));
+                startSt(new CalendarData(id, year, month +1, day));
+//                if(inputInfo1.getText().toString().isEmpty() && inputInfo2.getText().toString().isEmpty() && inputInfo3.getText().toString().isEmpty() && inputdiary.getText().toString().isEmpty() ) {
+//                    clddeleteBtn.setVisibility(View.INVISIBLE);
+//                }else{
+//                    clddeleteBtn.setVisibility(View.VISIBLE);
+//                }
+
             }
         });
 
@@ -104,7 +114,7 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 attemptMemo();
-                clddeleteBtn.setVisibility((View.VISIBLE));
+//                clddeleteBtn.setVisibility((View.VISIBLE));
             }
         });
 
@@ -112,11 +122,11 @@ public class CalendarActivity extends AppCompatActivity {
         clddeleteBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 attemptDelete();
-                if(inputInfo1.getText().toString().isEmpty() && inputInfo2.getText().toString().isEmpty() && inputInfo3.getText().toString().isEmpty() && inputdiary.getText().toString().isEmpty() ){
-                    clddeleteBtn.setVisibility(View.INVISIBLE);
-                }else{
-                    clddeleteBtn.setVisibility(View.VISIBLE);
-                }
+//                if(inputInfo1.getText().toString().isEmpty() && inputInfo2.getText().toString().isEmpty() && inputInfo3.getText().toString().isEmpty() && inputdiary.getText().toString().isEmpty() ){
+//                    clddeleteBtn.setVisibility(View.INVISIBLE);
+//                }else{
+//                    clddeleteBtn.setVisibility(View.VISIBLE);
+//                }
 
             }
         });
@@ -124,12 +134,15 @@ public class CalendarActivity extends AppCompatActivity {
 
     //삭제버튼 메서드
     private void attemptDelete(){
+        SharedPreferences sharedPreferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
+
+        String id = sharedPreferences.getString("user_id", "");
         String input1 = inputInfo1.getText().toString();
         String input2 = inputInfo2.getText().toString();
         String input3 = inputInfo3.getText().toString();
         String intputd = inputdiary.getText().toString();
 
-        deleteMemo(new DeleteData(rYear, rMonth, rDay, input1, input2, input3, intputd) );
+        deleteMemo(new DeleteData(rYear, rMonth, rDay, id, input1, input2, input3, intputd) );
 
     }
 
@@ -159,12 +172,15 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     private void attemptMemo() {
+        SharedPreferences sharedPreferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
+
+        String id = sharedPreferences.getString("user_id", "");
         String input1 = inputInfo1.getText().toString();
         String input2 = inputInfo2.getText().toString();
         String input3 = inputInfo3.getText().toString();
         String intputd = inputdiary.getText().toString();
 
-        startMemo(new MemoData(rYear, rMonth, rDay, input1, input2, input3, intputd ));
+        startMemo(new MemoData(rYear, rMonth, rDay, id, input1, input2, input3, intputd ));
     }
 
     private void startSt(CalendarData data) {
