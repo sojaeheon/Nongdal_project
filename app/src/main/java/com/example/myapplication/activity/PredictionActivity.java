@@ -31,7 +31,7 @@ public class PredictionActivity extends AppCompatActivity {
         ArrayList<Entry> entry_chart2 = new ArrayList<>();
 
         lineChart = (LineChart) findViewById(R.id.chart);
-
+//ㅇㅇㅇㅇ
         LineData chartData = new LineData(); // 차트에 담길 데이터
 
         entry_chart1.add(new Entry(1, 1)); //entry_chart1에 좌표 데이터를 담는다.
