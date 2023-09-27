@@ -16,6 +16,8 @@ import com.example.myapplication.data.CalendarResponse;
 import com.example.myapplication.data.MemoData;
 import com.example.myapplication.data.DeleteData;
 import com.example.myapplication.data.MemoResponse;
+import com.example.myapplication.data.ChartDataItem;
+import com.example.myapplication.data.ChartDataResponse;
 
 import com.example.myapplication.data.mypage.ChangeEmailData;
 import com.example.myapplication.data.mypage.ChangeEmailResponse;
@@ -26,6 +28,8 @@ import com.example.myapplication.data.mypage.ChangePwResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 // 0807 수정
 
@@ -59,5 +63,8 @@ public interface ServiceApi {
 
     @POST("/user/FindP")
     Call<FindPwResponse> userFindP(@Body FindPwData data);
+
+    @POST("/user/prediction/{userId}")
+    Call<ChartDataResponse> userPredict(@Path("userId") String userId);
 
 }

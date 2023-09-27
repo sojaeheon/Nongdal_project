@@ -37,6 +37,21 @@ public class LoginActivity extends AppCompatActivity {
     private Button signupBtn;
     private Button findBtn;
 
+    // 사용자의 대화 기록을 SharedPreferences에 저장하는 메서드
+    void saveMessageToSharedPreferences(String message, String sentBy) {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyChatHistory", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        // 현재 대화 기록 불러오기
+        String chatHistory = sharedPreferences.getString("chat_history", "");
+
+        // 새로운 메시지 추가
+        chatHistory += sentBy + ": " + message + "\n";
+
+        // 수정된 대화 기록 저장
+        editor.putString("chat_history", chatHistory);
+        editor.apply();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

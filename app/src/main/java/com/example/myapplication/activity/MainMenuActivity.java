@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.myapplication.activity.PredictionActivity;
 import com.example.myapplication.R;
 // 0807 수정
 public class MainMenuActivity extends AppCompatActivity {
