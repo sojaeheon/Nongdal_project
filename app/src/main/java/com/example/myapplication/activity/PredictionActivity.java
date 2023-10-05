@@ -85,7 +85,7 @@ public class PredictionActivity extends AppCompatActivity {
                         }
 
                         // 그래프 데이터 설정
-                        LineDataSet lineDataSet2 = new LineDataSet(entry_chart2, "LineGraph2");
+                        LineDataSet lineDataSet2 = new LineDataSet(entry_chart2, "우수농가");
 
                         // 그래프 관련 설정 (색상, 레이블 등)
                         lineDataSet2.setColor(Color.BLACK);
@@ -128,7 +128,7 @@ public class PredictionActivity extends AppCompatActivity {
             }
         });
 
-        LineDataSet lineDataSet1 = new LineDataSet(entry_chart1, "LineGraph1"); // 데이터가 담긴 Arraylist 를 LineDataSet 으로 변환한다.
+        LineDataSet lineDataSet1 = new LineDataSet(entry_chart1, "성장예측"); // 데이터가 담긴 Arraylist 를 LineDataSet 으로 변환한다.
 
         lineDataSet1.setColor(Color.RED); // 해당 LineDataSet의 색 설정 :: 각 Line 과 관련된 세팅은 여기서 설정한다.
 
