@@ -1,4 +1,4 @@
-package com.example.myapplication.activity;
+package com.example.myapplication.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

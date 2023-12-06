@@ -13,16 +13,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
+import com.example.myapplication.adapter.FertilizerAdapter;
 import com.example.myapplication.data.Fertilizer;
 
 import java.util.ArrayList;
 
 
-import android.app.Activity;
-import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Button;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
